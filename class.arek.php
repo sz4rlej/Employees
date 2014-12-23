@@ -6,29 +6,29 @@ use Common\Human;
 
 class Arek extends Human
 {
-    public function reprymenda()
+    public function getReprymend()
     {
         echo "Gupiśty, gupiśty, gupiśty!";
     }
 
-    public function autoreprymenda()
+    public function getAutoReprymend()
     {
         echo "Gupi ja, gupi ja, gupi ja!";
     }
 
     public function getRandomResponse()
     {
-        echo('tak');
+        echo "tak";
     }
 
     public function getUsualResponse()
     {
-        echo('wydupcaj');
+        echo "wydupcaj";
     }
 
     public function getStandardResponse()
     {
-        echo('uhmmm');
+        echo "uhmmm";
     }
 
     public function drunkAnswer()
