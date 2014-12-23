@@ -41,7 +41,7 @@ class Arek extends Human
         $this->mouthDo('laugh');
     }
 
-    public function warmFoodInMicrowave()
+    public function prepareFoodInMicrowave()
     {
         $bag = new Bag;
         $food = $bag->getContent();
