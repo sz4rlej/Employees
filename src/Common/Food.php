@@ -3,35 +3,43 @@ namespace Employees\Common;
 
 class Food
 {
-    private $type;
-    private $temperature;
+    private $type = null;
+    public $temperature = 0;
 
     /**
      * @param string $type Type of eaten food - ex. soup, sandwich, yogurt
+     * @param null|int $temperature Temperature of food
      */
-    public function __construct($type = 'unknown')
+    public function __construct($type = 'unknown', $temperature = null)
     {
+        $this->temperature = ($temperature === null) ? rand(5, 25) : $temperature;
+
         $this->type = (string)$type;
     }
 
     /**
-     * Check food is warm
+     * Check food is ready for eat
      *
      * @return bool
      */
-    public function isWarm()
+    public function isReadyForEat()
     {
-        $this->temperature = (double)(rand(0, 1000) / 10);
-        return ($this->temperature > 36.5) ? true : false;
+        $this->temperature += (double)(rand(0, 100) / 10);
+
+        return ($this->temperature >= 63) ? true : false;
     }
 
     /**
      * Get food from backpack
-     *
      * @return object $this - Food object
+     * @throws \Exception
      */
     public function getFromBackpack()
     {
+        if ($this->type === null) {
+            throw new Exceptions\NoFoodException();
+        }
+
         return $this;
     }
 

@@ -7,14 +7,14 @@ class Human
 {
     protected function moveRightHand($direction)
     {
-        return 'Hand was moved to: ' . $direction;
+        //TODO: do it
     }
 
     protected function mouthDo($what)
     {
         switch ($what) {
             case 'laugh':
-                return 'he he';
+                return $this->say('he he');
 
             default:
                 return false;
@@ -23,11 +23,16 @@ class Human
 
     protected function eat($something)
     {
-        return $something . 'is has been eaten';
+        //TODO: do it
     }
 
-    public function dayAfter() {
-        return 'The sun shines too loud...';
+    public function dayAfter()
+    {
+        $this->say('The sun shines too loud...');
     }
 
+    public function say($comment)
+    {
+        echo $comment;
+    }
 } 
