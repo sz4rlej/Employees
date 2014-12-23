@@ -23,5 +23,10 @@ class Human
                 break;
         }
     }
+    
+    protected function eat($something)
+    {
+        return true;
+    }    
 
 } 
