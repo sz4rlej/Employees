@@ -7,26 +7,27 @@ class Human
 {
     protected function moveRightHand($direction)
     {
-        return false;
+        return 'Hand was moved to: ' . $direction;
     }
 
     protected function mouthDo($what)
     {
         switch ($what) {
+            case 'laugh':
+                return 'he he';
 
             default:
                 return false;
-                break;
-
-            case 'laugh':
-                echo 'he he';
-                break;
         }
     }
-    
+
     protected function eat($something)
     {
-        return true;
-    }    
+        return $something . 'is has been eaten';
+    }
+
+    public function dayAfter() {
+        return 'The sun shines too loud...';
+    }
 
 } 

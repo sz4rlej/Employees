@@ -25,12 +25,9 @@ class Arek extends Human
 
     public function getStandardResponse()
     {
-        if( time() % 2 == 0 )
-        {
+        if (time() % 2 == 0) {
             echo "wydupcaj";
-        }
-        else
-        {
+        } else {
             echo "uhmmm";
         }
     }
@@ -43,16 +40,18 @@ class Arek extends Human
 
     public function microwaveFood()
     {
-        $food = new Food;
+        $food = new Food('russian dumplings in aluminum foil');
         $food->getFromBackpack();
-        $microwave = new Microwave;
+
+        $microwave = new Microwave();
         $microwave->putIn($food);
-        do
-        {
+
+        do {
             $microwave->setTime("5m");
             $microwave->setTemperature(200);
-            $mictowave->run();
-        } while (!$food->isWarm() || Employees\Morele\Przemololo::say("Weźże to kurwa odwiń z folii aluminiowej!"))
+            $microwave->run();
+        } while (!$food->isWarm() || Przemololo::say("Weźże to kurwa odwiń z folii aluminiowej!"));
+
         $this->eat($food);
     }
 
