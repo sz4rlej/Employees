@@ -21,14 +21,16 @@ class Arek extends Human
         echo "tak";
     }
 
-    public function getUsualResponse()
-    {
-        echo "wydupcaj";
-    }
-
     public function getStandardResponse()
     {
-        echo "uhmmm";
+        if( time() % 2 == 0 )
+        {
+            echo "wydupcaj";
+        }
+        else
+        {
+            echo "uhmmm";
+        }
     }
 
     public function drunkAnswer()
