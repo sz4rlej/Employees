@@ -52,7 +52,8 @@ class Arek extends Human
             $microwave->setTime("5m");
             $microwave->setTemperature(200);
             $mictowave->run();
-        } while (!$food->isWarm() || Employees\Morele\Przemololo::say("Weźże to kurwa odwiń z folii aluminiowej!"))
+        } while (!$food->isWarm() || Employees\Morele\Przemololo::say("Weźże to kurwa odwiń z folii aluminiowej!"));
+        
         $this->eat($food);
     }
 
