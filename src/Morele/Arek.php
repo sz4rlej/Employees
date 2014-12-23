@@ -1,8 +1,8 @@
 <?php
 
-namespace Common\Morele;
+namespace Employees\Morele;
 
-use Common\Human;
+use Employees\Common\Human;
 
 class Arek extends Human
 {
