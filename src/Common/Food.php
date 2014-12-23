@@ -24,8 +24,6 @@ class Food
      */
     public function isReadyForEat()
     {
-        $this->temperature += (double)(rand(0, 100) / 10);
-
         return ($this->temperature >= 63) ? true : false;
     }
 
