@@ -7,26 +7,32 @@ class Human
 {
     protected function moveRightHand($direction)
     {
-        return false;
+        //TODO: do it
     }
 
     protected function mouthDo($what)
     {
         switch ($what) {
+            case 'laugh':
+                return $this->say('he he');
 
             default:
                 return false;
-                break;
-
-            case 'laugh':
-                echo 'he he';
-                break;
         }
     }
-    
+
     protected function eat($something)
     {
-        return true;
-    }    
+        //TODO: do it
+    }
 
+    public function dayAfter()
+    {
+        $this->say('The sun shines too loud...');
+    }
+
+    public function say($comment)
+    {
+        echo $comment;
+    }
 } 

@@ -10,51 +10,56 @@ class Arek extends Human
 {
     public function getReprymend()
     {
-        echo "Gupiśty, gupiśty, gupiśty!";
+        $this->say('Gupiśty, gupiśty, gupiśty!');
     }
 
     public function getAutoReprymend()
     {
-        echo "Gupi ja, gupi ja, gupi ja!";
+        $this->say('Gupi ja, gupi ja, gupi ja!');
     }
 
     public function getRandomResponse()
     {
-        echo "tak";
+        $this->say('tak');
     }
 
     public function getStandardResponse()
     {
-        if( time() % 2 == 0 )
-        {
-            echo "wydupcaj";
-        }
-        else
-        {
-            echo "uhmmm";
+        if (time() % 2 == 0) {
+            $this->say('wydupcaj');
+        } else {
+            $this->say('uhmmm');
         }
     }
 
     public function getCodeInfoResponse()
     {
-        echo "nie wiem jak to działa a sam pisałem ten kod";
+        $this->say('nie wiem jak to działa a sam pisałem ten kod');
         $this->mouthDo('laugh');
     }
 
     public function prepareFoodInMicrowave()
     {
-        $bag = new Bag;
-        $food = $bag->getContent();
+        $heatingCounter = 0;
 
-        $microwave = new Microwave;
+        $bag = new Bag();
+        $food = $bag->getContent('russian dumplings in aluminum foil');
+
+        $microwave = new Microwave();
         $microwave->putIn($food);
 
-        do
-        {
-            $microwave->setTime("5m");
+        while (!$food->isReadyForEat()) {
+            if ($heatingCounter >= 5) {
+                $przemololo = new Przemololo();
+                $przemololo->arekFoilRemove();
+            }
+
+            $microwave->setTime('P0DT0H0M30S');
             $microwave->setTemperature(200);
-            $mictowave->run();
-        } while (!$food->isWarm() || Employees\Morele\Przemololo::say("Weźże to kurwa odwiń z folii aluminiowej!"));
+            $microwave->run();
+
+            ++$heatingCounter;
+        }
 
         $this->eat($food);
     }

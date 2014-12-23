@@ -3,12 +3,8 @@ namespace Employees\Common;
 
 class Bag
 {
-    private $content;
-
-    public function getContent()
+    public function getContent($type)
     {
-        return $this->content;
+        return new Food($type);
     }
-
-
 }
