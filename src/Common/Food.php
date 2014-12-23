@@ -7,6 +7,6 @@ class Food
 
     public function getFromBackpack()
     {
-      return $bagpackContent;
+      return $this->bagpackContent;
     }
 }
