@@ -4,6 +4,7 @@ namespace Employees\Morele;
 
 use Employees\Common\Human;
 use Employees\Common\Food;
+use Employees\Common\Microwave;
 
 class Arek extends Human
 {
@@ -45,13 +46,13 @@ class Arek extends Human
         $food = new Food;
         $food->getFromBackpack();
         $microwave = new Microwave;
-        $food->putIntoMicrowave($microwave);
+        $microwave->putIn($food);
         do
         {
             $microwave->setTime("5m");
             $microwave->setTemperature(200);
         } while (!$food->isWarm() || Employees\Morele\Przemololo::say("Weźże to kurwa odwiń z folii aluminiowej!"))
-        $this->eatFood($food);
+        $this->eat($food);
     }
 
     public function getDrunkAnswer()
