@@ -33,7 +33,7 @@ class Arek extends Human
         }
     }
 
-    public function drunkAnswer()
+    public function getDrunkAnswer()
     {
         $this->moveRightHand('up');
         $this->moveRightHand('down');
