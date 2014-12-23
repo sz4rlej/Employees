@@ -3,7 +3,7 @@
 namespace Employees\Morele;
 
 use Employees\Common\Human;
-use Employees\Common\Food;
+use Employees\Common\Bag;
 use Employees\Common\Microwave;
 
 class Arek extends Human
@@ -43,17 +43,19 @@ class Arek extends Human
 
     public function microwaveFood()
     {
-        $food = new Food;
-        $food->getFromBackpack();
+        $bag = new Bag;
+        $food = $bag->getContent();
+
         $microwave = new Microwave;
         $microwave->putIn($food);
+
         do
         {
             $microwave->setTime("5m");
             $microwave->setTemperature(200);
             $mictowave->run();
         } while (!$food->isWarm() || Employees\Morele\Przemololo::say("Weźże to kurwa odwiń z folii aluminiowej!"));
-        
+
         $this->eat($food);
     }
 
