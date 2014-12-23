@@ -21,4 +21,9 @@ class Microwave
   {
     $this->temperature = $temperature;
   }
+  
+  public function run()
+  {
+    return true;
+  }
 }
