@@ -41,7 +41,7 @@ class Arek extends Human
         $this->moveRightHand('down');
         $this->moveRightHand('up');
         $this->moveRightHand('down');
-        $this->getUsualResponse();
+        $this->getStandardResponse();
     }
 
 }
