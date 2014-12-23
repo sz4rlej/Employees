@@ -3,6 +3,7 @@
 namespace Employees\Morele;
 
 use Employees\Common\Human;
+use Employees\Common\Food;
 
 class Arek extends Human
 {
@@ -37,6 +38,20 @@ class Arek extends Human
     {
         echo "nie wiem jak to działa a sam pisałem ten kod";
         $this->mouthDo('laugh');
+    }
+
+    public function microwaveFood()
+    {
+        $food = new Food;
+        $food->getFromBackpack();
+        $microwave = new Microwave;
+        $food->putIntoMicrowave($microwave);
+        do
+        {
+            $microwave->setTime("5m");
+            $microwave->setTemperature(200);
+        } while (!$food->isWarm() || Employees\Morele\Przemololo::say("Weźże to kurwa odwiń z folii aluminiowej!"))
+        $this->eatFood($food);
     }
 
     public function getDrunkAnswer()
