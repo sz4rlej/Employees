@@ -15,4 +15,18 @@ class Human
         return false;
     }
 
+    protected function mouthDo($what)
+    {
+        switch ($what) {
+            
+            default:
+                return false;
+                break;
+
+            case 'laugh':
+                echo 'he he';
+                break;
+        }
+    }
+
 } 

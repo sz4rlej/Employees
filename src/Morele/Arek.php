@@ -33,6 +33,12 @@ class Arek extends Human
         }
     }
 
+    public function getCodeInfoResponse()
+    {
+        echo "nie wiem jak to działa a sam pisałem ten kod";
+        $this->mouthDo('laugh');
+    }
+
     public function getDrunkAnswer()
     {
         $this->moveRightHand('up');
