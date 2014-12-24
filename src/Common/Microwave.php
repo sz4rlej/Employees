@@ -28,11 +28,13 @@ class Microwave
         $this->temperature = $temperature;
     }
 
-    public function lockDoor($state=true) {
+    public function lockDoor($state = true)
+    {
         $this->lockDoor = $state;
     }
 
-    private function _beep() {
+    private function _beep()
+    {
         echo 'MICROWAVE: BEEP!!!' . "\n";
     }
 
@@ -53,9 +55,9 @@ class Microwave
             }
         }
 
-        $this->lockDoor(false);
-
         $this->_beep();
+
+        $this->lockDoor(false);
 
         return true;
     }

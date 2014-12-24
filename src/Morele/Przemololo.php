@@ -12,7 +12,8 @@ class Przemololo extends Human
         return $comment . ' - mówię Ci to ja!';
     }
 
-    public function arekFoilRemove() {
+    public function arekFoilRemove()
+    {
         $this->say("Weźże to kurwa odwiń z folii aluminiowej!");
 
         throw new Exceptions\ArekRemoveFoilException();
